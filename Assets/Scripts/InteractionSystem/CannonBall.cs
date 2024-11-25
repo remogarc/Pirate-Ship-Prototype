@@ -9,6 +9,7 @@ public class CannonBall : MonoBehaviour, InteractableInterface
     public bool Interact(Interactor interactor)
     {
         Debug.Log("Interacting with CannonBall");
+        // toggle cannonball in player hand to be visible
         return true;
     }
 }

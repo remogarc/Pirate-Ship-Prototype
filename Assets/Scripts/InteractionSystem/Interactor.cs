@@ -26,11 +26,7 @@ public class Interactor : MonoBehaviour
             if(interactable != null && Input.GetButtonDown("Fire1"))
             {
                 interactable.Interact(this);
-                Debug.Log("Interacting with ");
-            }
-        }
-        if(Input.GetButtonDown("Fire1")){
-                Debug.Log("Interacting with nothing");
+ß            }
         }
     }
 
