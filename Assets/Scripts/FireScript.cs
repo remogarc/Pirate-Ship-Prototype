@@ -19,17 +19,7 @@ public class FireScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            if (fireEnabled)
-            {
-                disableFire();
-            }
-            else
-            {
-                enableFire();
-            }
-        }
+
     }
 
     public void enableFire(){
