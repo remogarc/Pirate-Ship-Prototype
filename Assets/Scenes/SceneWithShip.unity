@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 58192895}
   - component: {fileID: 58192897}
   - component: {fileID: 58192898}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -731,7 +731,7 @@ PrefabInstance:
     - target: {fileID: 6084414875901929944, guid: 49423ea33ebcf17448ff75f4ee393e92,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6862359637103801186, guid: 49423ea33ebcf17448ff75f4ee393e92,
         type: 3}
@@ -960,7 +960,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 168829612}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Lanterns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1976,7 +1976,7 @@ GameObject:
   - component: {fileID: 496212204}
   - component: {fileID: 496212206}
   - component: {fileID: 496212207}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2382,6 +2382,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 677896523}
+  - component: {fileID: 677896524}
   m_Layer: 6
   m_Name: cannon_balls
   m_TagString: Untagged
@@ -2408,6 +2409,19 @@ Transform:
   - {fileID: 1299667695}
   m_Father: {fileID: 1981725677}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &677896524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677896522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ed797fb2374e445b940ac3e3d5f740c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prompt: '"Picking up cannon ball"'
 --- !u!1001 &686462810
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2450,6 +2464,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lantern
+      objectReference: {fileID: 0}
+    - target: {fileID: 6084414875901929944, guid: 49423ea33ebcf17448ff75f4ee393e92,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6862359637103801186, guid: 49423ea33ebcf17448ff75f4ee393e92,
         type: 3}
@@ -2931,6 +2950,7 @@ GameObject:
   - component: {fileID: 712610413}
   - component: {fileID: 712610412}
   - component: {fileID: 712610411}
+  - component: {fileID: 712610417}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3064,9 +3084,28 @@ Transform:
   m_LocalPosition: {x: 12.89, y: 12.83, z: -1.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 917590414}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &712610417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712610410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e07c854ed7ebb4ab696bfd54891e244c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionPoint: {fileID: 917590414}
+  interactionRange: 0.75
+  interactionLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  numInteractableObjs: 0
 --- !u!1001 &755662504
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3558,7 +3597,7 @@ PrefabInstance:
     - target: {fileID: 6084414875901929944, guid: 49423ea33ebcf17448ff75f4ee393e92,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6862359637103801186, guid: 49423ea33ebcf17448ff75f4ee393e92,
         type: 3}
@@ -3841,6 +3880,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 863564607}
+  - component: {fileID: 863564608}
   m_Layer: 6
   m_Name: cannon_balls
   m_TagString: Untagged
@@ -3867,6 +3907,19 @@ Transform:
   - {fileID: 772589041}
   m_Father: {fileID: 1981725677}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &863564608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863564606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ed797fb2374e445b940ac3e3d5f740c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prompt: '"Picking up cannon ball"'
 --- !u!1001 &898485656
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3951,6 +4004,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 898485656}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &917590413
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 917590414}
+  m_Layer: 0
+  m_Name: InteractionPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &917590414
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917590413}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: -0.37, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 712610416}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &940714459
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4160,7 +4244,7 @@ PrefabInstance:
     - target: {fileID: 6084414875901929944, guid: 49423ea33ebcf17448ff75f4ee393e92,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6862359637103801186, guid: 49423ea33ebcf17448ff75f4ee393e92,
         type: 3}
@@ -5089,7 +5173,7 @@ PrefabInstance:
     - target: {fileID: 6084414875901929944, guid: 49423ea33ebcf17448ff75f4ee393e92,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6862359637103801186, guid: 49423ea33ebcf17448ff75f4ee393e92,
         type: 3}
@@ -5488,7 +5572,7 @@ PrefabInstance:
     - target: {fileID: 6084414875901929944, guid: 49423ea33ebcf17448ff75f4ee393e92,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6862359637103801186, guid: 49423ea33ebcf17448ff75f4ee393e92,
         type: 3}
@@ -6583,7 +6667,7 @@ PrefabInstance:
     - target: {fileID: 6084414875901929944, guid: 49423ea33ebcf17448ff75f4ee393e92,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6862359637103801186, guid: 49423ea33ebcf17448ff75f4ee393e92,
         type: 3}
@@ -6760,7 +6844,7 @@ PrefabInstance:
     - target: {fileID: 5554007856860529251, guid: 0ff79bae430aa064f8ae622942cbf856,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7845,6 +7929,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2005516174}
+  - component: {fileID: 2005516175}
   m_Layer: 6
   m_Name: cannon_balls
   m_TagString: Untagged
@@ -7871,6 +7956,19 @@ Transform:
   - {fileID: 2031573973}
   m_Father: {fileID: 1981725677}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2005516175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005516173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ed797fb2374e445b940ac3e3d5f740c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prompt: '"Picking up cannon ball"'
 --- !u!1001 &2015435981
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7942,7 +8040,7 @@ PrefabInstance:
     - target: {fileID: 5554007856860529251, guid: 0ff79bae430aa064f8ae622942cbf856,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8168,7 +8266,7 @@ PrefabInstance:
     - target: {fileID: 6084414875901929944, guid: 49423ea33ebcf17448ff75f4ee393e92,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6862359637103801186, guid: 49423ea33ebcf17448ff75f4ee393e92,
         type: 3}
@@ -8397,6 +8495,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2051923943}
+  - component: {fileID: 2051923944}
   m_Layer: 6
   m_Name: cannon_balls
   m_TagString: Untagged
@@ -8423,6 +8522,19 @@ Transform:
   - {fileID: 849098107}
   m_Father: {fileID: 1981725677}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2051923944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051923942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ed797fb2374e445b940ac3e3d5f740c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prompt: '"Picking up cannon ball"'
 --- !u!1001 &2098500347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8812,7 +8924,7 @@ PrefabInstance:
     - target: {fileID: 3437982921804090330, guid: 03b71f234d9ce424ea193dd71bcfd53d,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8968,7 +9080,7 @@ PrefabInstance:
     - target: {fileID: 4310725568372231468, guid: f39173d0820eb854084c03d872bb8676,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9363,7 +9475,7 @@ PrefabInstance:
     - target: {fileID: 7785663625138384120, guid: 29d33797993e43f438c6fd17da3d7f79,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9564,7 +9676,7 @@ PrefabInstance:
     - target: {fileID: 7196314859362910583, guid: 4699eaa814d23304487bd0815a0becc8,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7536108291882048461, guid: 4699eaa814d23304487bd0815a0becc8,
         type: 3}
@@ -9642,7 +9754,7 @@ PrefabInstance:
     - target: {fileID: 8156069726498542551, guid: cc440eb7035a88945b52c0d67aad2be7,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8825927825731291501, guid: cc440eb7035a88945b52c0d67aad2be7,
         type: 3}
