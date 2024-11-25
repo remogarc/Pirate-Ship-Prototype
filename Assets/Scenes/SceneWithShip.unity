@@ -9098,6 +9098,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: EventManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7167096272180310796, guid: 82a18e1f1ac38e14b84c70bb2bd19a1d,
+        type: 3}
+      propertyPath: eventCooldown
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167096272180310796, guid: 82a18e1f1ac38e14b84c70bb2bd19a1d,
+        type: 3}
+      propertyPath: obstacleSpeed
+      value: 135
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167096272180310796, guid: 82a18e1f1ac38e14b84c70bb2bd19a1d,
+        type: 3}
+      propertyPath: ObstaclePrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167096272180310796, guid: 82a18e1f1ac38e14b84c70bb2bd19a1d,
+        type: 3}
+      propertyPath: ObstaclePrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 8956533243911266950, guid: c80597bb7f6c3824f99178af29a73dc6,
+        type: 3}
+    - target: {fileID: 7167096272180310796, guid: 82a18e1f1ac38e14b84c70bb2bd19a1d,
+        type: 3}
+      propertyPath: ObstaclePrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 8956533243911266950, guid: c80597bb7f6c3824f99178af29a73dc6,
+        type: 3}
     - target: {fileID: 8006874458646708021, guid: 82a18e1f1ac38e14b84c70bb2bd19a1d,
         type: 3}
       propertyPath: m_LocalPosition.x

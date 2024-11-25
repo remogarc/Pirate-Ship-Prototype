@@ -32,11 +32,14 @@ public class EventManager : MonoBehaviour
     [SerializeField] GameObject[] ObstaclePrefabs;
     public float obstacleSpeed = 1f;
 
+    private FireScript[] fireLocations;
+
 
 
     void Start()
     {
         eventChildren = transform.Find("EventChildren").gameObject;
+        fireLocations = transform.Find("FireLocations").GetComponentsInChildren<FireScript>();
     }
 
     //Call this function to start the events.
@@ -105,6 +108,7 @@ public class EventManager : MonoBehaviour
         GameObject obstacleSpawnLocation = ObstacleSpawnLocations[UnityEngine.Random.Range(0, ObstacleSpawnLocations.Length)];
         GameObject obstacle = Instantiate(ObstaclePrefabs[UnityEngine.Random.Range(0, ObstaclePrefabs.Length)], obstacleSpawnLocation.transform.position, obstacleSpawnLocation.transform.rotation);
         obstacle.transform.parent = eventChildren.transform;
+        obstacle.transform.rotation = Quaternion.Euler(-90, 0, 0);
         StartCoroutine(moveObstacle(obstacle));
         //Alert the player of the obstacle
         Debug.Log("Obstacle has been spotted. Steer the ship to avoid it");
@@ -136,8 +140,12 @@ public class EventManager : MonoBehaviour
     void spawnCannonball(){
         //Spawn cannonball that flys towards the ship
 
-        //Damage a part of the ship
-
+        //Pick a random fire script and play it
+        FireScript fire = fireLocations[UnityEngine.Random.Range(0, fireLocations.Length)];
+        while (fire.fireEnabled){
+            fire = fireLocations[UnityEngine.Random.Range(0, fireLocations.Length)];
+        }
+        fire.enableFire();
         //Alert the player of the damage
         Debug.Log("Cannonball has hit the ship");
         //Player must fix the damage
