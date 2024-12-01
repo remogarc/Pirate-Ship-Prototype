@@ -31,6 +31,7 @@ public class EventManager : MonoBehaviour
     [SerializeField] GameObject[] ObstacleSpawnLocations;
     [SerializeField] GameObject[] ObstaclePrefabs;
     public float obstacleSpeed = 1f;
+    [SerializeField] private GameObject obstacleParent;
 
     private FireScript[] fireLocations;
 
@@ -40,6 +41,7 @@ public class EventManager : MonoBehaviour
     {
         eventChildren = transform.Find("EventChildren").gameObject;
         fireLocations = transform.Find("FireLocations").GetComponentsInChildren<FireScript>();
+        spawnObstacle();
     }
 
     //Call this function to start the events.
@@ -109,6 +111,7 @@ public class EventManager : MonoBehaviour
         GameObject obstacle = Instantiate(ObstaclePrefabs[UnityEngine.Random.Range(0, ObstaclePrefabs.Length)], obstacleSpawnLocation.transform.position, obstacleSpawnLocation.transform.rotation);
         obstacle.transform.parent = eventChildren.transform;
         obstacle.transform.rotation = Quaternion.Euler(-90, 0, 0);
+        obstacle.transform.parent = obstacleParent.transform;
         StartCoroutine(moveObstacle(obstacle));
         //Alert the player of the obstacle
         Debug.Log("Obstacle has been spotted. Steer the ship to avoid it");

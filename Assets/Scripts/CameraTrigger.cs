@@ -6,6 +6,12 @@ public class CameraTrigger : MonoBehaviour
 {
     public Camera cameraInTrigger;  // Camera to switch to when entering trigger
     public Camera cameraOutTrigger; // Camera to switch back to when exiting trigger
+    
+    void Start()
+    {
+        cameraOutTrigger.gameObject.SetActive(true);
+        cameraInTrigger.gameObject.SetActive(false);    
+    }
 
     private void OnTriggerEnter(Collider other)
     {

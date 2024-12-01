@@ -26,7 +26,7 @@ public class Interactor : MonoBehaviour
             if(interactable != null && Input.GetButtonDown("Fire1"))
             {
                 interactable.Interact(this);
-ß            }
+            }
         }
     }
 
