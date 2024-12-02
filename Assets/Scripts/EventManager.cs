@@ -12,7 +12,7 @@ public class EventManager : MonoBehaviour
         Obstacle,
         EnemyShip,
         Cannonball,
-        WindsChanged,
+        HeavyRain,
         // None
     }
     private RandomEvents nextEvent;
@@ -86,9 +86,9 @@ public class EventManager : MonoBehaviour
                 spawnCannonball();
                 //Ship gets damaged and player must fix
                 break;
-            case RandomEvents.WindsChanged:
+            case RandomEvents.HeavyRain:
                 //change wind direction
-                changeWindDirection();
+                triggerHeavyRain();
                 //Player must adjust sails
                 break;
             // case RandomEvents.None:
@@ -168,12 +168,12 @@ public class EventManager : MonoBehaviour
         //Player must fix the damage
     }
 
-    void changeWindDirection(){
+    void triggerHeavyRain(){
         //Change wind direction
         windDirectionWest = !windDirectionWest;
 
         //Alert the player of the change in wind direction
-        Debug.Log("Wind direction has changed to " + (windDirectionWest ? "West" : "East"));
+        Debug.Log("Heavy rain starts to fall");
     }
 
 
