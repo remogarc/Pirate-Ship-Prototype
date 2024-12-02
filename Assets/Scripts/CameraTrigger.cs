@@ -18,7 +18,6 @@ public class CameraTrigger : MonoBehaviour
         // Check if the object that entered the trigger is the player
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Hello");
             // Switch to the camera in the trigger zone
             cameraInTrigger.gameObject.SetActive(true);
             cameraOutTrigger.gameObject.SetActive(false);
