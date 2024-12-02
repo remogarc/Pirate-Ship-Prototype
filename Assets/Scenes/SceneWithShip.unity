@@ -663,6 +663,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1981725677}
     m_Modifications:
+    - target: {fileID: 2375993676402766270, guid: 1b7403600508b3c4c8b138020893f5e2,
+        type: 3}
+      propertyPath: locationIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5162481051689161403, guid: 1b7403600508b3c4c8b138020893f5e2,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -758,7 +763,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8073558573137432961, guid: 1b7403600508b3c4c8b138020893f5e2,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073558573137432961, guid: 1b7403600508b3c4c8b138020893f5e2,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1.67
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8073558573983014175, guid: 1b7403600508b3c4c8b138020893f5e2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -916,6 +932,12 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &155454819 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1219729125759928542, guid: 90e100214a56f574db3adf1378c57d16,
+    type: 3}
+  m_PrefabInstance: {fileID: 19750207}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &162651815
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -924,6 +946,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1981725677}
     m_Modifications:
+    - target: {fileID: 2375993676402766270, guid: 1b7403600508b3c4c8b138020893f5e2,
+        type: 3}
+      propertyPath: locationIndex
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5162481051689161403, guid: 1b7403600508b3c4c8b138020893f5e2,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -1019,7 +1046,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8073558573137432961, guid: 1b7403600508b3c4c8b138020893f5e2,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073558573137432961, guid: 1b7403600508b3c4c8b138020893f5e2,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1.67
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8073558573983014175, guid: 1b7403600508b3c4c8b138020893f5e2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2584,6 +2622,7 @@ GameObject:
   m_Component:
   - component: {fileID: 677896523}
   - component: {fileID: 677896524}
+  - component: {fileID: 677896525}
   m_Layer: 6
   m_Name: cannon_balls
   m_TagString: Untagged
@@ -2623,6 +2662,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prompt: '"Picking up cannon ball"'
+--- !u!65 &677896525
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677896522}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.58, y: 1, z: 0.67}
+  m_Center: {x: 0, y: 0.35, z: 0}
 --- !u!1001 &686462810
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3174,6 +3234,7 @@ MonoBehaviour:
   playerSpeed: 6.5
   rotationSpeed: 720
   jumpHeight: 2
+  cannonBall: {fileID: 155454819}
 --- !u!143 &712610412
 CharacterController:
   m_ObjectHideFlags: 0
@@ -3663,7 +3724,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8073558573137432961, guid: 1b7403600508b3c4c8b138020893f5e2,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073558573137432961, guid: 1b7403600508b3c4c8b138020893f5e2,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1.67
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8073558573983014175, guid: 1b7403600508b3c4c8b138020893f5e2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4083,6 +4155,7 @@ GameObject:
   m_Component:
   - component: {fileID: 863564607}
   - component: {fileID: 863564608}
+  - component: {fileID: 863564609}
   m_Layer: 6
   m_Name: cannon_balls
   m_TagString: Untagged
@@ -4099,7 +4172,7 @@ Transform:
   m_GameObject: {fileID: 863564606}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.39, y: 3.724, z: -2.97}
+  m_LocalPosition: {x: -1.465, y: 3.724, z: -2.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4122,6 +4195,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prompt: '"Picking up cannon ball"'
+--- !u!65 &863564609
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863564606}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.58, y: 1, z: 0.67}
+  m_Center: {x: 0, y: 0.35, z: 0}
 --- !u!1001 &898485656
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4443,6 +4537,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 945459936}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &991641271 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9212191898124925681, guid: 82a18e1f1ac38e14b84c70bb2bd19a1d,
+    type: 3}
+  m_PrefabInstance: {fileID: 7555329438780595845}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1055032419
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6255,6 +6355,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2013747396886919266, guid: 17dddb75e2bf29e46b6ada0075bd6d32,
     type: 3}
   m_PrefabInstance: {fileID: 1417715209}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1418189202 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4954262059267022987, guid: 82a18e1f1ac38e14b84c70bb2bd19a1d,
+    type: 3}
+  m_PrefabInstance: {fileID: 7555329438780595845}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1444383875
 PrefabInstance:
@@ -8287,6 +8393,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2005516174}
   - component: {fileID: 2005516175}
+  - component: {fileID: 2005516176}
   m_Layer: 6
   m_Name: cannon_balls
   m_TagString: Untagged
@@ -8326,6 +8433,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prompt: '"Picking up cannon ball"'
+--- !u!65 &2005516176
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005516173}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.58, y: 1, z: 0.67}
+  m_Center: {x: 0, y: 0.35, z: 0}
 --- !u!1001 &2015435981
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8737,6 +8865,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1981725677}
     m_Modifications:
+    - target: {fileID: 2375993676402766270, guid: 1b7403600508b3c4c8b138020893f5e2,
+        type: 3}
+      propertyPath: locationIndex
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5162481051689161403, guid: 1b7403600508b3c4c8b138020893f5e2,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -8832,7 +8965,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8073558573137432961, guid: 1b7403600508b3c4c8b138020893f5e2,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073558573137432961, guid: 1b7403600508b3c4c8b138020893f5e2,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1.67
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8073558573983014175, guid: 1b7403600508b3c4c8b138020893f5e2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8853,6 +8997,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2051923943}
   - component: {fileID: 2051923944}
+  - component: {fileID: 2051923945}
   m_Layer: 6
   m_Name: cannon_balls
   m_TagString: Untagged
@@ -8892,6 +9037,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prompt: '"Picking up cannon ball"'
+--- !u!65 &2051923945
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051923942}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.58, y: 1, z: 0.67}
+  m_Center: {x: 0, y: 0.35, z: 0}
 --- !u!4 &2062707757 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8006874458646708021, guid: 82a18e1f1ac38e14b84c70bb2bd19a1d,
@@ -9996,6 +10162,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8956533243911266950, guid: c80597bb7f6c3824f99178af29a73dc6,
         type: 3}
+    - target: {fileID: 7167096272180310796, guid: 82a18e1f1ac38e14b84c70bb2bd19a1d,
+        type: 3}
+      propertyPath: shipSpawnLocations.Array.data[1]
+      value: 
+      objectReference: {fileID: 1418189202}
+    - target: {fileID: 7167096272180310796, guid: 82a18e1f1ac38e14b84c70bb2bd19a1d,
+        type: 3}
+      propertyPath: shipSpawnLocations.Array.data[2]
+      value: 
+      objectReference: {fileID: 991641271}
     - target: {fileID: 8006874458646708021, guid: 82a18e1f1ac38e14b84c70bb2bd19a1d,
         type: 3}
       propertyPath: m_LocalPosition.x

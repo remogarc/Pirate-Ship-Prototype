@@ -13,12 +13,13 @@ public class EventManager : MonoBehaviour
         EnemyShip,
         Cannonball,
         WindsChanged,
-        None
+        // None
     }
     private RandomEvents nextEvent;
     GameObject eventChildren;
     public float eventCooldown = 5f;
     bool gameStarted = false;
+    private AudioSource audioSource;
 
     //Set to false in real game. True for testing
     bool sailsUp = true;
@@ -41,7 +42,7 @@ public class EventManager : MonoBehaviour
     {
         eventChildren = transform.Find("EventChildren").gameObject;
         fireLocations = transform.Find("FireLocations").GetComponentsInChildren<FireScript>();
-        spawnObstacle();
+        audioSource = GetComponent<AudioSource>();
     }
 
     //Call this function to start the events.
@@ -90,10 +91,10 @@ public class EventManager : MonoBehaviour
                 changeWindDirection();
                 //Player must adjust sails
                 break;
-            case RandomEvents.None:
-                //Player gets a break
-                Debug.Log("The seas are calm for now...");
-                break;
+            // case RandomEvents.None:
+            //     //Player gets a break
+            //     Debug.Log("The seas are calm for now...");
+            //     break;
         }
     }
 
@@ -106,6 +107,7 @@ public class EventManager : MonoBehaviour
 
 
     void spawnObstacle(){
+        audioSource.Play();
         //Spawn obstacle
         GameObject obstacleSpawnLocation = ObstacleSpawnLocations[UnityEngine.Random.Range(0, ObstacleSpawnLocations.Length)];
         GameObject obstacle = Instantiate(ObstaclePrefabs[UnityEngine.Random.Range(0, ObstaclePrefabs.Length)], obstacleSpawnLocation.transform.position, obstacleSpawnLocation.transform.rotation);
@@ -129,15 +131,27 @@ public class EventManager : MonoBehaviour
         }
     }
 
+    public GameObject[] enemyShips = new GameObject[4];
 
     void spawnEnemyShip(){
+        int shipIndex = UnityEngine.Random.Range(0, enemyShips.Length);
+        if (enemyShips[shipIndex] != null){
+            Destroy(enemyShips[shipIndex]);
+            //Deal damage to player or end condition here?
+        }
         //Spawn enemy ship
-        GameObject shipSpawnLocation = shipSpawnLocations[UnityEngine.Random.Range(0, shipSpawnLocations.Length)];
+        GameObject shipSpawnLocation = shipSpawnLocations[shipIndex];
         GameObject enemyShip = Instantiate(EnemyShipPrefab, shipSpawnLocation.transform.position, shipSpawnLocation.transform.rotation);
         enemyShip.transform.parent = eventChildren.transform;
+        enemyShips[shipIndex] = enemyShip;
         //Alert the player of the enemy ship
         Debug.Log("Enemy ship has been spotted. Defeat it quickly");
+    }
 
+    //Call this function to destroy a ship
+    public void destroyShip(int shipIndex){
+        Destroy(enemyShips[shipIndex]);
+        enemyShips[shipIndex] = null;
     }
 
     void spawnCannonball(){

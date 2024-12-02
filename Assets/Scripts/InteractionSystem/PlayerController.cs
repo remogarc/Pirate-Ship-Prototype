@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,9 @@ public class PlayerController : MonoBehaviour
     private float gravityValue = -9.81f;
     public float jumpHeight = 4.0f;
 
+    [SerializeField] private GameObject cannonBall;
+    [NonSerialized] public bool hasCannonBall = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +25,7 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         //player.material.color = GameManager.Instance.color;
         //player.material.SetColor("_EmissionColor", GameManager.Instance.color);
+        cannonBall.SetActive(false);
     }
 
     // Update is called once per frame
@@ -53,4 +58,12 @@ public class PlayerController : MonoBehaviour
         playerVelocity.y += gravityValue * Time.deltaTime * 4.0f;
         controller.Move(playerVelocity * Time.deltaTime * 4.0f);
     }
+
+    public void toggleCannonBall(bool visible)
+    {
+        cannonBall.SetActive(visible);
+        hasCannonBall = visible;
+    }
+
+
 }
