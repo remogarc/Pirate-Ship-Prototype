@@ -10,11 +10,6 @@ public class Interactor : MonoBehaviour
     private readonly Collider[] colliders = new Collider[3];
     [SerializeField] private int numInteractableObjs;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
