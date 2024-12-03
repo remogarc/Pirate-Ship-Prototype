@@ -20,6 +20,7 @@ public class EventManager : MonoBehaviour
     public float eventCooldown = 5f;
     bool gameStarted = false;
     private AudioSource audioSource;
+    public ShipHealth shipHealth;
 
     //Set to false in real game. True for testing
     bool sailsUp = true;
@@ -123,7 +124,13 @@ public class EventManager : MonoBehaviour
             //Move the obstacle towards the ship
             //Move obstacle in the positive X direction
             obstacle.transform.position += new Vector3(obstacleSpeed, 0, 0) * Time.deltaTime;
-            yield return new WaitForSeconds(0.1f);
+            if (obstacle.transform.position.x >= -20f && obstacle.transform.position.x <= 25f &&
+            obstacle.transform.position.z >= -7f && obstacle.transform.position.z <= 22f)
+            {
+                shipHealth.ChangeHealth(15f);
+                yield break;
+            }
+                yield return new WaitForSeconds(0.1f);
             if (obstacle.transform.localPosition.x > 30){
                 Destroy(obstacle);
                 yield break;
@@ -146,6 +153,14 @@ public class EventManager : MonoBehaviour
         enemyShips[shipIndex] = enemyShip;
         //Alert the player of the enemy ship
         Debug.Log("Enemy ship has been spotted. Defeat it quickly");
+        StartCoroutine(DelayDamage(5f));
+    }
+
+    IEnumerator DelayDamage(float delayTime)
+    {
+        yield return new WaitForSeconds(delayTime);
+        shipHealth.ChangeHealth(10f);
+        Debug.Log("The enemy ship has dealt 10 damage!");
     }
 
     //Call this function to destroy a ship
@@ -156,7 +171,7 @@ public class EventManager : MonoBehaviour
 
     void spawnCannonball(){
         //Spawn cannonball that flys towards the ship
-
+        shipHealth.ChangeHealth(5f);
         //Pick a random fire script and play it
         FireScript fire = fireLocations[UnityEngine.Random.Range(0, fireLocations.Length)];
         while (fire.fireEnabled){

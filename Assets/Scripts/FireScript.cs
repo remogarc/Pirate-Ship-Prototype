@@ -11,7 +11,10 @@ public class FireScript : MonoBehaviour, InteractableInterface
     [SerializeField] private string prompt;
     public string InteractionPrompt => prompt;
     private AudioSource audioSource;
-
+    public float damageInterval = 2f;
+    private float damageAmount = 1f;
+    private bool isTakingDamage = false;
+    public ShipHealth shipHealth;
 
     // Start is called before the first frame update
     void Start()
@@ -30,12 +33,28 @@ public class FireScript : MonoBehaviour, InteractableInterface
         audioSource.Play();
         fireEnabled = true;
         fire.Play();
+
+        if (!isTakingDamage)
+        {
+            StartCoroutine(ApplyDamageOverTime());
+        }
     }
 
     public void disableFire(){
         fireEnabled = false;
         fire.Stop();
         fire.Clear();
+
+        if (isTakingDamage)
+        {
+            StopCoroutine(ApplyDamageOverTime());
+            isTakingDamage = false;
+        }
+
+        if(shipHealth != null)
+        {
+            shipHealth.ChangeHealth(-5f); // Restore 5 health when fire is put out
+        }
     }
 
     public bool Interact(Interactor interactor)
@@ -49,5 +68,19 @@ public class FireScript : MonoBehaviour, InteractableInterface
             return true;
         }
         
+    }
+
+    private IEnumerator ApplyDamageOverTime()
+    {
+        isTakingDamage = true;
+        while (fireEnabled)
+        {
+            if (shipHealth != null)
+            {
+                shipHealth.ChangeHealth(damageAmount); // Apply damage to the ship
+            }
+            yield return new WaitForSeconds(damageInterval); // Wait before applying damage again
+        }
+        isTakingDamage = false;
     }
 }
