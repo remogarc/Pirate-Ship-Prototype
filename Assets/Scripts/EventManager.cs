@@ -44,7 +44,7 @@ public class EventManager : MonoBehaviour
         eventChildren = transform.Find("EventChildren").gameObject;
         fireLocations = transform.Find("FireLocations").GetComponentsInChildren<FireScript>();
         audioSource = GetComponent<AudioSource>();
-        InvokeRepeating("decreaseEventCooldown", 30f, 15f);
+        InvokeRepeating("decreaseEventCooldown", 45f, 20f);
     }
 
     //Call this function to start the events.
