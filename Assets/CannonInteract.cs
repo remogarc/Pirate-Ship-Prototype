@@ -9,6 +9,7 @@ public class CannonInteract : MonoBehaviour, InteractableInterface
     private EventManager eventManager;
     [SerializeField] private string prompt;
     public string InteractionPrompt => prompt;
+    private GameObject indicator;
     public bool Interact(Interactor interactor)
     {
         Debug.Log("Cannon Interacted");
@@ -33,11 +34,19 @@ public class CannonInteract : MonoBehaviour, InteractableInterface
             Debug.LogError("No Event Manager found");
         }
         audioSource = GetComponent<AudioSource>();
+        indicator = this.transform.GetChild(1).gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (eventManager.enemyShips[locationIndex] != null)
+        {
+            indicator.SetActive(true);
+        }
+        else
+        {
+            indicator.SetActive(false);
+        }
     }
 }
