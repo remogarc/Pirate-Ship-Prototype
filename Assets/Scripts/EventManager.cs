@@ -125,7 +125,7 @@ public class EventManager : MonoBehaviour
             //Move the obstacle towards the ship
             //Move obstacle in the positive X direction
             obstacle.transform.position += new Vector3(obstacleSpeed, 0, 0) * Time.deltaTime;
-            if (obstacle.transform.position.x >= -20f && obstacle.transform.position.x <= 25f &&
+            if (obstacle.transform.position.x >= -23f && obstacle.transform.position.x <= 25f &&
             obstacle.transform.position.z >= -7f && obstacle.transform.position.z <= 22f)
             {
                 shipHealth.ChangeHealth(15f);

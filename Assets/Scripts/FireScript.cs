@@ -23,12 +23,6 @@ public class FireScript : MonoBehaviour, InteractableInterface
         audioSource = transform.parent.GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void enableFire(){
         audioSource.Play();
         fireEnabled = true;
