@@ -10,6 +10,10 @@ public class CannonInteract : MonoBehaviour, InteractableInterface
     [SerializeField] private string prompt;
     public string InteractionPrompt => prompt;
     private GameObject indicator;
+    private GameObject cannon;
+    private Renderer cannonRenderer;
+    private Material originalCannonMaterial;
+    private Renderer indicatorRenderer;
     public bool Interact(Interactor interactor)
     {
         Debug.Log("Cannon Interacted");
@@ -35,6 +39,10 @@ public class CannonInteract : MonoBehaviour, InteractableInterface
         }
         audioSource = GetComponent<AudioSource>();
         indicator = this.transform.GetChild(1).gameObject;
+        cannon = this.transform.GetChild(0).gameObject;
+        cannonRenderer = cannon.GetComponent<Renderer>();
+        indicatorRenderer = indicator.GetComponent<Renderer>();
+        originalCannonMaterial = new Material(cannonRenderer.material);
     }
 
     // Update is called once per frame
@@ -42,11 +50,11 @@ public class CannonInteract : MonoBehaviour, InteractableInterface
     {
         if (eventManager.enemyShips[locationIndex] != null)
         {
-            indicator.SetActive(true);
+            cannonRenderer.material = indicatorRenderer.material;
         }
         else
         {
-            indicator.SetActive(false);
+            cannonRenderer.material = originalCannonMaterial;
         }
     }
 }

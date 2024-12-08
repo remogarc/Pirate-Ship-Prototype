@@ -11706,7 +11706,7 @@ PrefabInstance:
     - target: {fileID: 7167096272180310796, guid: 82a18e1f1ac38e14b84c70bb2bd19a1d,
         type: 3}
       propertyPath: obstacleSpeed
-      value: 135
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 7167096272180310796, guid: 82a18e1f1ac38e14b84c70bb2bd19a1d,
         type: 3}
