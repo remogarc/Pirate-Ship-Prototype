@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ShipHealth : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class ShipHealth : MonoBehaviour
 
         if (currentHealth <= 0f)
         {
+            SceneManager.LoadScene("Lose scene");
             Debug.Log("Ship has been destroyed!");
         }
         if (currentHealth > maxHealth)

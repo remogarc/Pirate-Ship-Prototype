@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 public class UITimer : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class UITimer : MonoBehaviour
             countdownTime -= 1;
             UpdateTimerDisplay();
         }
-
+        SceneManager.LoadScene("Win scene");
         Debug.Log("Ship has survived!");
     }
 
